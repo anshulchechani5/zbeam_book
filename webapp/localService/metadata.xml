@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zpp_beam_book_def" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="DetailedReportType" sap:label="RESPONCE CDS" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="plant"/>
+                    <PropertyRef Name="Beam"/>
+                    <PropertyRef Name="Piece_no"/>
+                    <PropertyRef Name="material"/>
+                </Key>
+                <Property Name="plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Plant"/>
+                <Property Name="Beam" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Beam no"/>
+                <Property Name="Piece_no" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Piece no"/>
+                <Property Name="material" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="MATERIAL"/>
+                <Property Name="Order_no" Type="Edm.String" MaxLength="12" sap:label="Order no."/>
+                <Property Name="folding_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="folding date"/>
+                <Property Name="Description" Type="Edm.String" MaxLength="40" sap:label="Description"/>
+                <Property Name="Challan_Date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Challan Date"/>
+                <Property Name="Pick" Type="Edm.Int32" sap:label="Pick"/>
+                <Property Name="G_mtr" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="G. Mtr."/>
+                <Property Name="Weight" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Weight"/>
+                <Property Name="Wt_Mtr" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Wt/Mtr."/>
+                <Property Name="Challan_No" Type="Edm.String" MaxLength="10" sap:label="Challan No."/>
+                <Property Name="Loom_No" Type="Edm.String" MaxLength="3" sap:display-format="NonNegative" sap:label="Loom No."/>
+                <Property Name="Beam_Length" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Beam Length"/>
+                <Property Name="Balance_Mtr" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Balance Mtr."/>
+                <Property Name="Shrinkage" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Shrinkage %"/>
+                <Property Name="QualityWt" Type="Edm.Decimal" Precision="10" Scale="3" sap:label="Quality Weight"/>
+                <Property Name="Reed" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative" sap:label="Reed"/>
+                <Property Name="MasterPick" Type="Edm.Decimal" Precision="5" Scale="2" sap:label="Pick Master"/>
+                <Property Name="Rs" Type="Edm.Decimal" Precision="7" Scale="2" sap:label="RS"/>
+                <Property Name="SetNo" Type="Edm.String" MaxLength="15" sap:label="Set Number"/>
+                <Property Name="materialbaseunit" Type="Edm.String" MaxLength="3" sap:label="UOM" sap:semantics="unit-of-measure"/>
+                <Property Name="Flengeno" Type="Edm.String" MaxLength="15" sap:label="Fleng Number"/>
+            </EntityType>
+            <EntityContainer Name="cds_zpp_beam_book_def_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="DetailedReport" EntityType="cds_zpp_beam_book_def.DetailedReportType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="cds_zpp_beam_book_def.cds_zpp_beam_book_def_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cds_zpp_beam_book_def.cds_zpp_beam_book_def_Entities/DetailedReport" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zpp_beam_book_def.cds_zpp_beam_book_def_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/sap/ZPP_BEAM_BOOK_BIN/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://my405100-api.s4hana.cloud.sap/sap/opu/odata/sap/ZPP_BEAM_BOOK_BIN/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
